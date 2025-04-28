@@ -189,10 +189,10 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-2">
             {/* Card 1 */}
             <div className="relative flex flex-col items-start text-left rounded-lg bg-white p-8 shadow-md">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
+              <div className="absolute -top-8 flex h-16 w-16 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
                 1
               </div>
-              <h3 className="mt-6 mb-4 text-lg md:text-xl font-bold text-[#5B5858]">Cadastre sua empresa</h3>
+              <h3 className="mt-10 mb-4 text-lg md:text-xl font-bold text-[#5B5858]">Cadastre sua empresa</h3>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 Dedique alguns minutos para registrar sua empresa em nossa plataforma. Informe detalhes cruciais como o setor de atuação, a localização geográfica e os tipos de materiais (resíduos ou matérias-primas) com os quais você trabalha ou tem interesse. Ao fornecer informações precisas, você aumenta suas chances de ser encontrado por parceiros relevantes e de descobrir oportunidades que realmente se encaixam no seu negócio.
               </p>
@@ -200,10 +200,10 @@ export default function Home() {
 
             {/* Card 2 */}
             <div className="relative flex flex-col items-start text-left rounded-lg bg-white p-8 shadow-md">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
+              <div className="absolute -top-8 flex h-16 w-16 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
                 2
               </div>
-              <h3 className="mt-6 mb-4 text-lg md:text-xl font-bold text-[#5B5858]">Ofereça ou busque resíduos</h3>
+              <h3 className="mt-10 mb-4 text-lg md:text-xl font-bold text-[#5B5858]">Ofereça ou busque resíduos</h3>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 Utilize nossa interface intuitiva para listar os resíduos que sua empresa gera, especificando os tipos, quantidades e condições. Paralelamente, explore o catálogo de materiais disponíveis de outras empresas. Seja para encontrar uma solução sustentável para seus resíduos ou para adquirir matérias-primas a custos mais vantajosos, nossa plataforma facilita a conexão entre oferta e demanda de diversos materiais (como plásticos, metais, papel, têxteis e muitos outros).
               </p>
@@ -211,10 +211,10 @@ export default function Home() {
 
             {/* Card 3 */}
             <div className="relative flex flex-col items-start text-left rounded-lg bg-white p-8 shadow-md">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
+              <div className="absolute -top-8 flex h-16 w-16 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
                 3
               </div>
-              <h3 className="mt-6 mb-4 text-lg md:text-xl font-bold text-[#5B5858]">Negocie com outras empresas</h3>
+              <h3 className="mt-10 mb-4 text-lg md:text-xl font-bold text-[#5B5858]">Negocie com outras empresas</h3>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 Entre em contato direto com outras empresas interessadas nos seus resíduos ou que oferecem os materiais que você procura. Utilize as ferramentas de comunicação da plataforma para discutir detalhes, negociar preços, condições de troca, venda ou até mesmo doação. Nossa plataforma visa facilitar a criação de relações comerciais transparentes e eficientes, otimizando o fluxo de materiais e promovendo a economia circular.
               </p>
@@ -222,10 +222,10 @@ export default function Home() {
 
             {/* Card 4 */}
             <div className="relative flex flex-col items-start text-left rounded-lg bg-white p-8 shadow-md">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
+              <div className="absolute -top-8 flex h-16 w-16 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
                 4
               </div>
-              <h3 className="mt-6 mb-4 text-lg md:text-xl font-bold text-[#5B5858]">Acompanhe os impactos</h3>
+              <h3 className="mt-10 mb-4 text-lg md:text-xl font-bold text-[#5B5858]">Acompanhe os impactos</h3>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 Visualize de forma clara e objetiva as métricas geradas pelas suas transações na plataforma. Acompanhe a economia de custos obtida com a destinação inteligente de resíduos ou a aquisição de matérias-primas recicladas. Além disso, quantifique sua contribuição para a sustentabilidade através da redução de resíduos enviados para aterros e da diminuição da emissão de poluentes. Tenha dados concretos para demonstrar o valor da sua participação na economia circular.
               </p>
