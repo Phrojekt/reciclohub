@@ -12,26 +12,6 @@ export default function Home() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
 
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    try {
-      // Simulando envio - aqui você pode fazer um fetch/axios para API
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simula tempo de envio
-      
-      setShowSuccess(true); // Mostra o pop-up
-      setFormData({ nome: "", email: "", mensagem: "" }); // Limpa o formulário
-    } catch (error) {
-      console.error("Erro ao enviar o formulário:", error);
-    }
-  };
 
   return (
     <main className="min-h-screen bg-white">
