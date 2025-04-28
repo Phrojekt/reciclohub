@@ -7,6 +7,31 @@ import { useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({ nome: "", email: "", mensagem: "" });
+  const [loading, setLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      // Simulando envio - aqui você pode fazer um fetch/axios para API
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simula tempo de envio
+      
+      setShowSuccess(true); // Mostra o pop-up
+      setFormData({ nome: "", email: "", mensagem: "" }); // Limpa o formulário
+    } catch (error) {
+      console.error("Erro ao enviar o formulário:", error);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-white">
@@ -257,16 +282,41 @@ export default function Home() {
       </section>
 
 
+      <>
       {/* Cadastro Section */}
       <section id="cadastro" className="py-16 md:py-20 bg-[#83D5D9]/15">
         <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-center text-3xl md:text-4xl font-extrabold text-[#00A2AA]">Cadastre sua Empresa</h2>
+          <h2 className="mb-8 text-center text-3xl md:text-4xl font-extrabold text-[#00A2AA]">
+            Cadastre sua Empresa
+          </h2>
           <form
             id="reciclohub-form"
             className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md"
-            action="https://api.sheetmonkey.io/form/qxyYQVeHBiYcpAeMYBzk8C"
-            method="post"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setLoading(true);
+              const formData = new FormData(e.target as HTMLFormElement);
+              const data = Object.fromEntries(formData.entries());
+
+              try {
+                const response = await fetch("https://api.sheetmonkey.io/form/qxyYQVeHBiYcpAeMYBzk8C", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(data),
+                });
+                if (!response.ok) throw new Error("Erro na resposta do servidor");
+
+                setShowSuccess(true);
+                (e.target as HTMLFormElement).reset(); // Limpa o formulário
+              } catch (error) {
+                console.error("Erro ao enviar cadastro:", error);
+                setShowError(true);
+              } finally {
+                setLoading(false);
+              }
+            }}
           >
+            {/* Campos do formulário */}
             <div className="mb-6">
               <label htmlFor="nomeEmpresa" className="block mb-2 text-sm font-medium text-gray-700">
                 Nome da empresa <span className="text-red-500">*</span>
@@ -280,6 +330,7 @@ export default function Home() {
                 className="w-full rounded-md border border-gray-300 p-3 text-sm text-black placeholder-gray-500 focus:border-teal-500 focus:ring-teal-500"
               />
             </div>
+
             <div className="mb-6">
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-700">
                 E-mail de contato <span className="text-red-500">*</span>
@@ -293,6 +344,7 @@ export default function Home() {
                 className="w-full rounded-md border border-gray-300 p-3 text-sm text-black placeholder-gray-500 focus:border-teal-500 focus:ring-teal-500"
               />
             </div>
+
             <div className="mb-6">
               <label htmlFor="telefone" className="block mb-2 text-sm font-medium text-gray-700">
                 Telefone de contato
@@ -305,6 +357,7 @@ export default function Home() {
                 className="w-full rounded-md border border-gray-300 p-3 text-sm text-black placeholder-gray-500 focus:border-teal-500 focus:ring-teal-500"
               />
             </div>
+
             <div className="mb-6">
               <label htmlFor="tipoResiduo" className="block mb-2 text-sm font-medium text-gray-700">
                 Tipo de resíduo
@@ -316,6 +369,7 @@ export default function Home() {
                 className="w-full rounded-md border border-gray-300 p-3 text-sm text-black placeholder-gray-500 focus:border-teal-500 focus:ring-teal-500"
               ></textarea>
             </div>
+
             <div className="mb-6">
               <label htmlFor="interesse" className="block mb-2 text-sm font-medium text-gray-700">
                 Interesse <span className="text-red-500">*</span>
@@ -332,15 +386,50 @@ export default function Home() {
                 <option value="vender" className="text-gray-600">Vender resíduos</option>
               </select>
             </div>
+
             <button
               type="submit"
-              className="w-full rounded-md bg-[#00A2AA] px-6 py-3 hover:cursor-pointer text-white font-medium hover:bg-teal-600"
+              disabled={loading}
+              className="w-full rounded-md bg-[#00A2AA] px-6 py-3 text-white font-medium hover:bg-teal-600 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Cadastrar Empresa
+              {loading ? "Enviando..." : "Cadastrar Empresa"}
             </button>
           </form>
         </div>
       </section>
+
+      {/* Popup de Sucesso */}
+      {showSuccess && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center max-w-sm">
+            <h2 className="text-2xl font-bold text-[#00A2AA] mb-4">Cadastro Enviado!</h2>
+            <p className="text-gray-700 mb-6">Obrigado por se cadastrar em nossa plataforma.</p>
+            <button
+              onClick={() => setShowSuccess(false)}
+              className="rounded-md bg-[#00A2AA] px-6 py-2 text-white font-medium hover:bg-teal-600"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Popup de Erro */}
+      {showError && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center max-w-sm">
+            <h2 className="text-2xl font-bold text-red-500 mb-4">Erro ao Enviar</h2>
+            <p className="text-gray-700 mb-6">Não conseguimos processar seu cadastro. Tente novamente.</p>
+            <button
+              onClick={() => setShowError(false)}
+              className="rounded-md bg-red-500 px-6 py-2 text-white font-medium hover:bg-red-600"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
+    </>
 
       {/* Footer */}
       <footer id="footer" className="bg-[#00757B] py-12 text-white">
