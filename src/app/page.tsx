@@ -21,8 +21,8 @@ export default function Home() {
               Sobre Nós
             </Link>
             <Link
-              href="#footer"
-              className="rounded-md bg-teal-500 px-4 py-2 text-sm font-medium text-white hover:bg-teal-600"
+              href="https://forms.gle/fyzdRCHt2yAf43tA6"
+              className="rounded-md bg-teal-500 px-4 py-2 text-sm font-medium text-white hover:bg-teal-600" target="__blank"
             >
               Cadastre-se
             </Link>
@@ -31,7 +31,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-[#83D5D9]/15 py-16">
+      <section className="bg-[#83D5D9]/15 py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="mb-6 text-4xl font-extrabold text-[#00757B] md:text-5xl">
             Conectando Indústrias,
@@ -45,7 +45,7 @@ export default function Home() {
             simbiose industrial e impulsionando a economia circular no Brasil.
           </p>
           <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
-            <Link href="#footer" className="rounded-full bg-[#00A2AA] px-6 py-3 text-white hover:bg-teal-600">
+            <Link href="https://forms.gle/fyzdRCHt2yAf43tA6" target="_blank" className="rounded-full bg-[#00A2AA] px-6 py-3 text-white hover:bg-teal-600">
               Cadastre sua empresa
             </Link>
             <Link
@@ -61,10 +61,10 @@ export default function Home() {
       {/* Benefits Section */}
       <section id="benefits" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-[#00A2AA]">Por que usar nossa plataforma?</h2>
+          <h1 className="mb-12 text-center text-4xl font-extrabold text-[#00A2AA]">Por que usar nossa plataforma?</h1>
           <div className="flex flex-col space-y-8">
             {/* Ganhos Econômicos */}
-            <div className="mx-auto w-full max-w-3xl rounded-lg bg-[#00A2AA22] p-6 text-left">
+            <div className="mx-auto w-full max-w-xl rounded-lg bg-[#00A2AA22] p-6 text-left">
               <h3 className="mb-4 text-xl font-semibold text-[#5B5858]">Ganhos Econômicos</h3>
               <p className="text-gray-600">
                 Reduza custos com descarte e aquisição de matérias-primas, transformando despesas em receitas.
@@ -72,7 +72,7 @@ export default function Home() {
             </div>
 
             {/* Sustentabilidade Prática */}
-            <div className="mx-auto w-full max-w-3xl rounded-lg bg-[#00A2AA22] p-6 text-left">
+            <div className="mx-auto w-full max-w-xl rounded-lg bg-[#00A2AA22] p-6 text-left">
               <h3 className="mb-4 text-xl font-semibold text-[#5B5858]">Sustentabilidade Prática</h3>
               <p className="text-gray-600">
                 Contribua ativamente para a redução de resíduos e emissão de CO<sub>2</sub>, alinhando sua empresa às melhores práticas ESG.
@@ -80,7 +80,7 @@ export default function Home() {
             </div>
 
             {/* Conexões Inteligentes */}
-            <div className="mx-auto w-full max-w-3xl rounded-lg bg-[#00A2AA22] p-6 text-left">
+            <div className="mx-auto w-full max-w-xl rounded-lg bg-[#00A2AA22] p-6 text-left">
               <h3 className="mb-4 text-xl font-semibold text-[#5B5858]">Conexões Inteligentes</h3>
               <p className="text-gray-600">
                 Encontre parceiros ideais com base no tipo de resíduo e demanda, criando relações comerciais sustentáveis.
@@ -93,14 +93,14 @@ export default function Home() {
       {/* How it Works Section */}
       <section id="how-it-works" className="bg-teal-50 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-[#00A2AA]">Como Funciona?</h2>
+          <h2 className="mb-12 text-center text-4xl font-black text-[#00A2AA]">Como Funciona?</h2>
           <div className="grid gap-8 md:grid-cols-2">
             {/* Card 1 */}
             <div className="relative rounded-lg bg-white p-6 shadow-md max-w-sm mx-auto">
               <div className="absolute -top-5 left-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
                 1
               </div>
-              <h3 className="mb-3 mt-4 text-lg font-semibold text-[#5B5858]">Cadastre sua empresa</h3>
+              <h3 className="mb-3 mt-4 text-lg font-bold text-[#5B5858]">Cadastre sua empresa</h3>
               <p className="text-gray-600">
                 Crie seu perfil empresarial em poucos minutos, informando seu setor, localização e interesses.
               </p>
@@ -111,7 +111,7 @@ export default function Home() {
               <div className="absolute -top-5 left-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
                 2
               </div>
-              <h3 className="mb-3 mt-4 text-lg font-semibold text-[#5B5858]">Ofereça ou busque resíduos</h3>
+              <h3 className="mb-3 mt-4 text-lg font-bold text-[#5B5858]">Ofereça ou busque resíduos</h3>
               <p className="text-gray-600">
                 Registre seus resíduos disponíveis ou procure por materiais de interesse (plásticos, metais, têxteis etc.)
               </p>
@@ -122,7 +122,7 @@ export default function Home() {
               <div className="absolute -top-5 left-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
                 3
               </div>
-              <h3 className="mb-3 mt-4 text-lg font-semibold text-[#5B5858]">Negocie com outras empresas</h3>
+              <h3 className="mb-3 mt-4 text-lg font-bold text-[#5B5858]">Negocie com outras empresas</h3>
               <p className="text-gray-600">
                 Entre em contato e estabeleça as melhores condições para troca, venda ou doação dos materiais.
               </p>
@@ -133,7 +133,7 @@ export default function Home() {
               <div className="absolute -top-5 left-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#00A2AA] text-xl font-semibold text-white">
                 4
               </div>
-              <h3 className="mb-3 mt-4 text-lg font-semibold text-[#5B5858]">Acompanhe os impactos</h3>
+              <h3 className="mb-3 mt-4 text-lg font-bold text-[#5B5858]">Acompanhe os impactos</h3>
               <p className="text-gray-600">
                 Visualize métricas de economia e sustentabilidade geradas pelas suas transações na plataforma.
               </p>
@@ -145,10 +145,10 @@ export default function Home() {
       {/* Mission Section */}
       <section id="mission" className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-10 text-3xl font-bold text-teal-700">
+          <h2 className="mb-10 text-3xl font-extrabold text-teal-700">
             Juntos por um futuro
             <br />
-            mais limpo e colaborativo
+            mais limpo e colaborativo.
           </h2>
           <div className="mx-auto max-w-3xl">
             <p className="mb-8 text-center text-gray-600 leading-relaxed">
@@ -196,8 +196,14 @@ export default function Home() {
             </div>
             <div>
               <h3 className="mb-4 text-lg font-semibold">Contato</h3>
-              <p className="mb-2 text-white hover:text-gray-300 hover:cursor-pointer">reciclohub@gmail.com</p>
-              <p className="text-white hover:text-gray-300 hover:cursor-pointer">Caruaru-PE</p>
+                <a
+                href="mailto:reciclohub@gmail.com"
+                className="mb-2 text-white hover:text-gray-300 hover:cursor-pointer"
+                rel="noopener noreferrer"
+                >
+                reciclohub@gmail.com
+                </a>
+              <p className="text-white">Caruaru-PE</p>
             </div>
           </div>
         </div>
