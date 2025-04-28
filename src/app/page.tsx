@@ -7,7 +7,6 @@ import { useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({ nome: "", email: "", mensagem: "" });
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
