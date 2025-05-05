@@ -13,7 +13,7 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white" id="">
       {/* Header */}
       <header className="border-b border-gray-200 bg-white">
         <div className="container mx-auto flex items-center justify-between px-4 py-4">
